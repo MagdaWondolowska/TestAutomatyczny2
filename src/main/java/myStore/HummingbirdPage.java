@@ -62,7 +62,6 @@ public class HummingbirdPage {
                 driver.getCurrentUrl().contains("4-size-xl"));
 
 
-
         WebElement element = driver.findElement(By.id("quantity_wanted"));
         element.sendKeys(String.valueOf(quantity));
         element.sendKeys(Keys.DELETE);

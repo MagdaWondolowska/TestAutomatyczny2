@@ -17,7 +17,11 @@ public class ShippingMethodPage {
 
     public void chooseShippingMethod() {
         WebElement element = driver.findElement(By.cssSelector("input[value='8,']"));
-//        element.click();
+        boolean isSelected = element.isSelected();
+
+        if (isSelected) {}
+        else { element.click(); }
+
         element = driver.findElement(By.cssSelector("button[name='confirmDeliveryOption']"));
         element.click();
 

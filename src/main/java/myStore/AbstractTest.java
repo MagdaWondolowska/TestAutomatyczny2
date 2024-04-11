@@ -4,8 +4,11 @@ package myStore;
 import org.junit.After;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
+
+import java.sql.Driver;
 
 public class AbstractTest {
 
@@ -13,7 +16,6 @@ public class AbstractTest {
     WebDriverWait wait;
 
     public void setUp(String browser) {
-//        System.setProperty("webdriver.chrome.driver", "C:\\Users\\magda\\WebDrivers\\chromedriver.exe");
         driver = getDriver(browser);
         wait = new WebDriverWait(driver, 3);
     }
@@ -25,9 +27,9 @@ public class AbstractTest {
 
     private WebDriver getDriver(String browser) {
         switch (browser.toUpperCase()) {
-            case "FIREFOX": {
-                System.setProperty("webdriver.gecko.driver", "C:\\Users\\magda\\WebDrivers\\chromedriver.exe");
-                return new FirefoxDriver();
+            case "EDGE": {
+                System.setProperty("webdriver.edge.driver", "src/main/resources/drivers/msedgedriver.exe");
+                return new EdgeDriver();
             }
             default: {
                 System.setProperty("webdriver.chrome.driver", "src/main/resources/drivers/chromedriver.exe");

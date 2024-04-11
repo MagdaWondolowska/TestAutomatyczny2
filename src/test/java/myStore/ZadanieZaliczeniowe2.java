@@ -21,7 +21,7 @@ public class ZadanieZaliczeniowe2 extends AbstractTest {
 
     @Before
     public void openBrowser() {
-        setUp("chrome");
+        setUp("EDGE");
         homePage = new HomePage(driver);
         loginPage =  new LoginPage(driver);
         yourAccountPage = new YourAccountPage(driver);
@@ -32,7 +32,6 @@ public class ZadanieZaliczeniowe2 extends AbstractTest {
         paymentPage = new PaymentPage(driver);
         orderConfirmationPage = new OrderConfirmationPage(driver);
         orderHistory = new OrderHistory(driver);
-
     }
 
 
@@ -44,8 +43,8 @@ public class ZadanieZaliczeniowe2 extends AbstractTest {
         loginPage.logIn("qliooldricbaioejyj@cazlv.com", "12345");
         yourAccountPage.chooseCategory();
         hummingbirdPage.checkDiscount("20");
-        hummingbirdPage.chooseSize("m");
-        hummingbirdPage.chooseQuantity(11);
+        hummingbirdPage.chooseSize("l");
+        hummingbirdPage.chooseQuantity(7);
         hummingbirdPage.addToCart();
         hummingbirdPage.proceedToCheckout();
         shopingCart.proceedToCheckOut();
@@ -58,8 +57,6 @@ public class ZadanieZaliczeniowe2 extends AbstractTest {
         yourAccountPage.goToOrderHistory();
         orderHistory.orderStatusVeryfication("Awaiting check payment");
         orderHistory.orderValueVeryfication(generatedOderValue);
-
-
 
     }
 
