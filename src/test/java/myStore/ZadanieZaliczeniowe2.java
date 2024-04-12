@@ -21,7 +21,7 @@ public class ZadanieZaliczeniowe2 extends AbstractTest {
 
     @Before
     public void openBrowser() {
-        setUp("EDGE");
+        setUp("chrome");
         homePage = new HomePage(driver);
         loginPage =  new LoginPage(driver);
         yourAccountPage = new YourAccountPage(driver);
@@ -43,8 +43,8 @@ public class ZadanieZaliczeniowe2 extends AbstractTest {
         loginPage.logIn("qliooldricbaioejyj@cazlv.com", "12345");
         yourAccountPage.chooseCategory();
         hummingbirdPage.checkDiscount("20");
-        hummingbirdPage.chooseSize("l");
-        hummingbirdPage.chooseQuantity(7);
+        hummingbirdPage.chooseSize("xl");
+        hummingbirdPage.chooseQuantity(5);
         hummingbirdPage.addToCart();
         hummingbirdPage.proceedToCheckout();
         shopingCart.proceedToCheckOut();
